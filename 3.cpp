@@ -68,7 +68,7 @@ Goods Goods::operator=(Goods& _ob) {
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    Goods comp1("HP", "03.03.2021", 222, 11, 777);      
+    Goods comp1("HP", "09.09.2021", 222, 11, 777);      
     Goods comp2(comp1);
     Goods comp3;
     tovar(comp2);
