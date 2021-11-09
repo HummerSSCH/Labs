@@ -6,7 +6,7 @@ using namespace std;
 class Goods {
     string name;
     string date;
-    int cost;
+    int kolvo;
     int num;
     int id;
 public:   
