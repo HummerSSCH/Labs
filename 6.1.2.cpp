@@ -1,5 +1,6 @@
-﻿#include <iostream>;
-#include <string>;
+*#include <iostream>
+#include <string>
+#include <locale.h>
 
 using namespace std;
 
@@ -8,11 +9,12 @@ protected:
 	int price;
 	int weight;
 	string color;
+
 public:
 	DomesticAnimal() {
 		price = 0;
 		weight = 0;
-		color = "brown";
+		color = "black";
 	}
 
 	DomesticAnimal(int _price, int _weight, string _color) {
@@ -22,36 +24,44 @@ public:
 	}
 
 	void Print() {
-		cout << price + "  " << weight + "  " << color + "  ";
-		cout << "Класс domestic ";
+		cout << price << "  " << weight << "  " << color << "  ";
+		cout << "Class domestic ";
 	}
 
 };
 
-class Cow : public DomesticAnimal {
+class Cow : virtual public DomesticAnimal {
 public:
+	Cow() {};
 	Cow(int _price, int _weight, string _color) : DomesticAnimal(_price, _weight, _color) {}
+
 	void Print() {
-		cout << price + "  " << weight + "  " << color + "  ";
-		cout << "Класс Cow ";
+		cout << price << "  " << weight << "  " << color << "  ";
+		cout << "Class Cow ";
 	}
 };
 
-class Buffalo : public DomesticAnimal {
+class Buffalo : virtual public DomesticAnimal {
 public:
+	Buffalo() {};
 	Buffalo(int _price, int _weight, string _color) : DomesticAnimal(_price, _weight, _color) {}
+
 	void Print() {
-		cout << price + "  " << weight + "  " << color + "  ";
-		cout << "Класс Buffalo ";
+		cout << price << "  " << weight << "  " << color << "  ";
+		cout << "Class Buffalo ";
 	}
 };
 
-class Beefalo : public DomesticAnimal {
+class Beefalo : public Cow, public Buffalo {
 public:
-	Beefalo(int _price, int _weight, string _color) : DomesticAnimal(_price, _weight, _color) {}
+	Beefalo(int _price, int _weight, string _color) {
+		price = _price;
+		weight = _weight;
+		color = _color;
+	}
 	void Print() {
-		cout << price + "  " << weight + "  " << color + "  ";
-		cout << "Класс Beefalo ";
+		cout << price << "  " << weight << "  " << color << "  ";
+		cout << "class Beefalo ";
 	}
 };
 
@@ -63,4 +73,3 @@ int main() {
 	b.Print();
 
 	return 0;
-}
